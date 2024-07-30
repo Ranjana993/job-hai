@@ -4,7 +4,6 @@ const Hiring = () => {
   return (
     <div>
       <h1>Wants to Hire ??</h1>
-      
     </div>
   )
 }

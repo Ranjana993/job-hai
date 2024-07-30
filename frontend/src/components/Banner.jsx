@@ -7,7 +7,7 @@ const Banner = () => {
       <div className="w-full mx-auto flex flex-col items-center md:flex-row ">
         <div className="flex w-[60%] flex-col items-center md:items-start text-center md:text-left pl-6 p-4">
           <h2 className="text-green-600 font-semibold text-lg">INDIA&apos;S #1 JOB PLATFORM</h2>
-          <h1 className="text-8xl font-bold mt-2">Your Job Search Ends Here</h1>
+          <h1 className="text-8xl font-bold mt-2 bodoni-moda-sc-bold">Your Job Search Ends Here</h1>
           <p className="text-xl text-gray-600 mt-4">Discover 50 lakh+ career opportunities</p>
           <div className="flex mt-12 w-[90%]">
             <input

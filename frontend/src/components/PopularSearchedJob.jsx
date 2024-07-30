@@ -4,7 +4,7 @@ const PopularSearchedJob = () => {
   return (
     <div className='container mx-auto bg-custom-gradient'>
       <div className='pb-20 pt-8 text-center '>
-        <h1 className='text-7xl'>Popular Job Searched <br /> </h1>
+        <h1 className='text-7xl'>Popular <span className='text-green-500/90 font-bold'>Job </span> Searched <br /> </h1>
         <p className='text-xl  text-gray-500 py-3'>Do you know what people search more ? </p>
     </div>
       
