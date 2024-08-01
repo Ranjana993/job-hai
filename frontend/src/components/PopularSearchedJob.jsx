@@ -9,7 +9,7 @@ const PopularSearchedJob = () => {
     </div>
       
       <div className='flex items-center gap-8 flex-wrap px-8'>
-        <div className="bg-[#f6e3e3] pl-4 w-[30%] flex items-center border border-gray-200 rounded-2xl transition transform hover:scale-105 hover:border-red-700 ease-in-out hover:bg-[#ef4444]/20 duration-300 group hover:text-red-800">
+        <div className="bg-[#f6e3e3] pl-4 w-[30%] flex items-center border border-gray-200 rounded-2xl transition transform hover:scale-105 ease-in-out duration-300 hover:border-red-700  hover:bg-[#ef4444]/20  group hover:text-red-800">
           <div className='flex w-full py-4'>
             <div className='flex w-full flex-col justify-between'>
               <h3 className='text-4xl'>Work from home</h3>

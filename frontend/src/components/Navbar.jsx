@@ -23,14 +23,14 @@ const Navbar = () => {
           </nav>
         </div>
         <div className="flex items-center space-x-4">
-          <button className="hidden md:inline text-purple-700 border border-purple-500 px-8 py-3 rounded-md hover:bg-purple-500 hover:text-white">
+          <button className="hidden md:inline text-[#1F8268] border border-[#1F8268] px-8 py-3 rounded-md hover:bg-[#1F8268] hover:text-white">
             Login
           </button>
-          <button className="hidden md:inline text-white bg-[#3843D0] px-8 py-3 rounded-md hover:bg-[#060f96] ">
+          <button className="hidden md:inline text-white bg-[#1F8268] px-8 py-3 rounded-md hover:bg-[#09654d] ">
             Register
           </button>
-          <a href="#" className="hidden md:inline text-[#3843D0] font-bold hover:text-purple-500">Employers Login</a>
-          <button className="md:hidden text-purple-500 focus:outline-none" onClick={toggleMenu} >☰ </button>
+          <a href="#" className="hidden md:inline text-[#1F8268] font-bold hover:text-purple-500">Employers Login</a>
+          <button className="md:hidden text-[#1F8268] focus:outline-none" onClick={toggleMenu} >☰ </button>
         </div>
       </div>
       {menuOpen && (

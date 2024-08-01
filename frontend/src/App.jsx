@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import JobForm from './pages/JobForm';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/jobform" element={<JobForm />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 };

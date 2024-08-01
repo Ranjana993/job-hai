@@ -9,7 +9,9 @@ export default {
       extend: {
         backgroundImage: {
           'custom-gradient': 'linear-gradient(90deg, rgba(241,225,238,1) 0%, rgba(226,217,247,1) 57%, rgba(241,223,255,1) 79%)',
-        }
+          
+        },
+        'buttonClr': '#1F8268',
       }
     },
     fontFamily: {

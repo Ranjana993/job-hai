@@ -22,7 +22,7 @@ const JobOpenings = () => {
   }, []);
 
   return (
-    <div className="container w-full bg-green-300 px-12 py-8">
+    <div className="container w-full bg-purple-200/20 px-12 py-6 mt-12">
       <h1 className='py-12 text-7xl font-mono text-center'>Job Openings in Top companies</h1>
       <Slider {...settings}>
         {jobs.map((job, index) => (

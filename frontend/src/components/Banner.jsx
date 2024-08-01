@@ -20,7 +20,7 @@ const Banner = () => {
               placeholder="Search for an area or city"
               className="p-4 border-t border-b border-r border rounded-r-md w-full md:w-1/2"
             />
-            <button className="bg-[#3843D0] text-white p-2 text-lg  px-12 rounded-md ml-2">Search</button>
+            <button className="bg-[#1F8268]  hover:bg-[#008964] text-white p-2 text-lg  px-12 rounded-md ml-2">Search</button>
           </div>
         </div>
         <div className="mt-6 w-[40%] md:mt-12">
