@@ -4,6 +4,7 @@ import Banner from '../components/Banner';
 import PopularSearchedJob from '../components/PopularSearchedJob';
 import Hiring from '../components/Hiring';
 import JobOpenings from '../components/JobOpening';
+import About from '../components/About';
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Banner />
       <PopularSearchedJob />
       <JobOpenings />
+      <About />
       {/* <Hiring /> */}
     </div>
   );
