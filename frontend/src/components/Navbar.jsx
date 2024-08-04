@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,9 +47,10 @@ const Navbar = () => {
             <button className="text-purple-500 border border-purple-500 px-4 py-2 rounded-md hover:bg-purple-500 hover:text-white">
               Login
             </button>
-            <button className="text-white bg-orange-500 px-4 py-2 rounded-md hover:bg-orange-600">
+            <Link to={"/register"}>  <button className="text-white bg-orange-500 px-4 py-2 rounded-md hover:bg-orange-600">
               Register
             </button>
+            </Link>
             <a href="#" className="text-gray-700 hover:text-purple-500">Employers Login</a>
           </nav>
         </div>

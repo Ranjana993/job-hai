@@ -5,6 +5,7 @@ import PopularSearchedJob from '../components/PopularSearchedJob';
 import Hiring from '../components/Hiring';
 import JobOpenings from '../components/JobOpening';
 import About from '../components/About';
+import Partner from '../components/Partners';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <JobOpenings />
       <About />
       {/* <Hiring /> */}
+      <Partner />
     </div>
   );
 };
