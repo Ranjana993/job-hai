@@ -6,6 +6,8 @@ import Hiring from '../components/Hiring';
 import JobOpenings from '../components/JobOpening';
 import About from '../components/About';
 import Partner from '../components/Partners';
+import Testimonial from '../components/Testimonial';
+import JobSection from '../components/JobSection';
 
 const Home = () => {
   return (
@@ -16,6 +18,8 @@ const Home = () => {
       <About />
       {/* <Hiring /> */}
       <Partner />
+      <JobSection />
+      <Testimonial />
     </div>
   );
 };

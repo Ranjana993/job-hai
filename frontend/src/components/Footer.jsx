@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Footer = () => {
   return (
     <footer className='text-start text-white font-poppins'>
-      <div className='pt-16 pb-12 text-sm border-t border-slate-200 bg-[#001233] font-poppins '>
+      <div className='pt-16 pb-12 text-sm border-t border-slate-200 bg-[#1D292E] font-poppins '>
         <div className='sm:container px-3 mx-auto'>
           <div className='grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12'>
             <div className='col-span-4 md:col-span-8 lg:col-span-4' aria-labelledby='footer-header' >

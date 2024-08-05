@@ -31,7 +31,7 @@ const Navbar = () => {
             Register
           </button>
           <a href="#" className="hidden md:inline text-[#1F8268] font-bold hover:text-purple-500">Employers Login</a>
-          <button className="md:hidden text-[#1F8268] focus:outline-none" onClick={toggleMenu} >☰ </button>
+          <button className="md:hidden text-[#1F8268] focus:outline-none" onClick={toggleMenu} > ☰ </button>
         </div>
       </div>
       {menuOpen && (
