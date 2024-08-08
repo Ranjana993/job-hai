@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Profiler } from 'react';
 import "./App.css"
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import JobForm from './pages/JobForm';
 import Footer from './components/Footer';
+import ProfileSetup from './components/Profile/ProfileSetup';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/jobform" element={<JobForm />} />
+          <Route path="/profile" element={<ProfileSetup />}/>
         </Routes>
       </div>
       <Footer />
