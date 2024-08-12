@@ -19,7 +19,7 @@ const Register = () => {
 
   return (
     <div className="container w-full mx-auto p-4 mt-24">
-      <h1 className="text-5xl font-bold mb-4 text-center">Register</h1>
+      <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl text-center font-bold mt-2 bodoni-moda-sc-bold py-12" >Register now </h1>
       <div className='flex gap-12 justify-center items-center'>
         <div className='w-[50%]'>
           <form onSubmit={handleSubmit}>
@@ -29,7 +29,7 @@ const Register = () => {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="mt-1 p-2 border border-gray-400 rounded-lg outline-none w-full"
+                className="mt-1 p-2 border border-gray-400 rounded-lg outline-none w-full h-12"
               />
             </div>
             <div className="mb-4">
@@ -38,7 +38,7 @@ const Register = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 p-2 border border-gray-400 rounded-lg outline-none w-full"
+                className="mt-1 p-2 border border-gray-400 rounded-lg outline-none w-full h-12"
               />
             </div>
             <div className="mb-4">
@@ -47,7 +47,7 @@ const Register = () => {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 p-2 border border-gray-400 rounded-lg outline-none w-full"
+                className="mt-1 p-2 border border-gray-400 rounded-lg outline-none w-full h-12"
               />
             </div>
             <div className="mb-4">
@@ -61,7 +61,9 @@ const Register = () => {
                 <option value="employer">Employer</option>
               </select>
             </div>
-            <button type="submit" className="bg-blue-500 text-white p-2">Register</button>
+            <button className="hidden md:inline text-white bg-[#1F8268] px-6 lg:px-8 py-1 lg:py-3  rounded-md hover:bg-[#09654d] ">
+              Register Now
+            </button>
           </form>
         </div>
         <div className='w-[40%]'>
