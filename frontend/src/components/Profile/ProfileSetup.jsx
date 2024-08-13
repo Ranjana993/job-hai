@@ -37,6 +37,7 @@ const ProfileSetup = () => {
   };
 
   return (
+    <div className=' px-24'> 
     <form onSubmit={handleSubmit}>
       <PersonalInfo formData={formData} handleChange={handleChange} />
       <Skills skills={formData.skills} handleSkillChange={handleSkillChange} />
@@ -44,6 +45,7 @@ const ProfileSetup = () => {
       <Education education={formData.education} handleEducationChange={handleEducationChange} />
       <button type="submit" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Submit</button>
     </form>
+    </div>
   );
 };
 

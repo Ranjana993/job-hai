@@ -3,7 +3,7 @@ import React from 'react';
 
 const PersonalInfo = ({ formData, handleChange }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-4 mt-36">
       <h2 className="text-xl font-bold mb-2">Personal Information</h2>
       <input
         type="text"

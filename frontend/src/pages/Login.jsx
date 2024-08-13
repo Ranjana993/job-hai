@@ -1,53 +1,69 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import axios from "axios"
 
 const Login = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [role, setRole] = useState('jobseeker');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post('/api/auth/register', { name, email, password, role });
-      localStorage.setItem('token', res.data.token);
-    } catch (err) {
-      console.error(err);
-    }
+  const [userData, setUserData] = useState({
+    email: "",
+    password: ""
+  })
+  const navigate = useNavigate()
+  const onHandleChange = (e) => {
+    setUserData((prevUserData) => ({
+      ...prevUserData,
+      [e.target.name]: e.target.value
+    }));
   };
 
+  const handleSubmit = async (e) => {
+    // e.preventDefault()
+    // const response = await axios.post("https://solesphere-backend12.onrender.com/signin", userData)
+    // console.log(response?.data)
+    // const token = response.data.token;
+    // localStorage.setItem('user-Token', token);
+    navigate("/profile-setup")
+  }
   return (
-    <div className="container w-full p-4 mt-24 py-12">
-      <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl text-center font-bold mt-2 bodoni-moda-sc-bold py-12" >Login </h1>
-      
-      <div className='   w-1/2 m-auto'>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4 ">
-            <label className="block text-gray-700">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 p-2 border border-gray-400 rounded-lg outline-none w-full h-12"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 p-2 border border-gray-400 rounded-lg outline-none w-full h-12"
-            />
-          </div>
-          <button className="hidden md:inline text-white bg-[#1F8268] px-6 lg:px-8 py-1 lg:py-3 mt-8 rounded-md hover:bg-[#09654d] ">
-            Login
-          </button>
-        </form>
-      </div>
-    </div>
-  );
-};
+    <>
+      <div className="py-12">
+        <section className="">
+          <div className="flex items-center py-4">
+            <div className="w-full flex justify-between gap-4 rounded-lg">
+              <div className="p-4 w-full lg:w-[50%] ml-2 lg:ml-12 px-4 lg:px-12 space-y-4 md:space-y-6 sm:p-8">
+                <h1 className="text-5xl font-bold leading-tight tracking-tight font-mono">Sign in </h1>
+                <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
+                  <div>
+                    <label htmlFor="email" className="block mb-2 text-sm font-mono text-gray-900  font-bold ">Your Email</label>
+                    <input type="email" name="email" value={userData.email} onChange={onHandleChange} className="bg-gray-50 border border-gray-500 text-gray-900 sm:text-sm rounded-lg w-[98%] lg:w-[90%] p-3 " placeholder="email@gmail.com" required />
+                  </div>
+                  <div>
+                    <label htmlFor="password" className="block mb-2 text-sm font-mono font-bold text-gray-900 ">Password</label>
+                    <input type="password" name="password" value={userData.password} onChange={onHandleChange} placeholder="••••••••" className="bg-gray-50 border border-gray-500 text-gray-900 sm:text-sm rounded-lg w-[98%] lg:w-[90%] p-3 " required />
+                  </div>
 
-export default Login;
+                  <div className="flex items-start">
+                    <div className="flex items-center h-5">
+                      <input aria-describedby="terms" type="checkbox" className="w-[98%] lg:w-[90%] h-5 border border-gray-300 rounded " required />
+                    </div>
+                    <div className="ml-3 text-sm">
+                      <label htmlFor="terms" className="font-light text-gray-500">I accept the <Link className="font-medium text-primary-600 hover:underline  dark:text-primary-500" to="#">Terms and Conditions</Link></label>
+                    </div>
+                  </div>
+                  <button type="submit" onSubmit={handleSubmit} className="w-[98%] lg:w-[90%] text-white bg-[#1F8268] hover:bg-[#008964] text-md px-5 py-3 rounded-lg text-center dark:bg-primary-600 dark:hover:bg-primary-700 ">Create an account</button>
+                  <p className="text-sm font-light ">
+                    Don`&apos;t have account? <Link to="/register" className="font-medium text-primary-600 hover:underline dark:text-primary-500 hover:text-orange-500">SignUp here</Link>
+                  </p>
+                </form>
+              </div>
+              <div className="w-[50%] px-12 hidden lg:block mt-12">
+                <img className="w-full rounded-xl bg-contain" src={"https://www.livecareer.com/lcapp/uploads/2020/09/jobseeker-glossary.jpg?w=866"} alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  )
+}
+
+export default Login

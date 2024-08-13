@@ -32,7 +32,7 @@ const TestimonialCarousel = () => {
   };
 
   return (
-    <div className="bg-green-600/60 p-6 sm:p-10 mt-4">
+    <div className="bg-violet-600/80 p-6 sm:p-10 mt-4">
       <div className="text-white mb-6">
         <div className="flex items-center space-x-2">
           <img src="https://storage.googleapis.com/mumbai_apnatime_prod/apna-home/inverted-quote.png" alt="" />
