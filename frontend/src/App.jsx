@@ -8,6 +8,8 @@ import Register from './pages/Register';
 import JobForm from './pages/JobForm';
 import Footer from './components/Footer';
 import ProfileSetup from './components/Profile/ProfileSetup';
+import EmployerProfile from './components/EmployerProfile';
+import JobSeekerProfile from './components/JobSeekerProfile';
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/jobform" element={<JobForm />} />
           <Route path="/profile-setup" element={<ProfileSetup />}/>
+          <Route path="/employer-profile" element={<EmployerProfile />}/>
+          <Route path="/jobseeker-profile" element={<JobSeekerProfile />} />
         </Routes>
       </div>
       <Footer />
