@@ -1,53 +1,30 @@
 const mongoose = require('mongoose');
 
-const EmployerProfileSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
-  },
-  companyName: {
-    type: String,
-    required: true
-  },
-  website: {
-    type: String
-  },
-  location: {
-    type: String
-  },
-  industry: {
+const JobSchema = new mongoose.Schema({
+  title: {
     type: String,
     required: true
   },
   description: {
-    type: String
+    type: String,
+    required: true
   },
-  founded: {
-    type: Date
+  location: {
+    type: String,
+    required: true
   },
-  contactInfo: {
-    email: {
-      type: String,
-      required: true
-    },
-    phone: {
-      type: String
-    },
-    address: {
-      type: String
-    }
+  salary: {
+    type: String,
+    required: true
   },
-  jobPostings: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Job'
-    }
-  ],
+  postedBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'EmployerProfile'
+  },
   date: {
     type: Date,
     default: Date.now
   }
 });
 
-module.exports = mongoose.model('EmployerProfile', EmployerProfileSchema);
+module.exports = mongoose.model('Job', JobSchema);
