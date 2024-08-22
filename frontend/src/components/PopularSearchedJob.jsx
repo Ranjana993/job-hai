@@ -98,7 +98,7 @@ const PopularSearchedJob = () => {
             <div className="flex w-full py-8 px-4 items-center justify-between">
               <div className="flex flex-col justify-between w-3/5">
                 <h3 className={`text-lg sm:text-2xl md:text-3xl lg:text-4xl group-hover:text-${card.hoverTextColor}`}>{card.title}</h3>
-                <p className={`bg-[#4d44ef] text-white p-2 mt-4 rounded-md cursor-pointer transition duration-300 group-hover:bg-[#2720a3] text-center`}>
+                <p className={`bg-[#4d44ef] text-white p-2 mt-12 rounded-md cursor-pointer transition duration-300 group-hover:bg-[#2720a3] text-center w-[50%]`}>
                   See more
                 </p>
               </div>
