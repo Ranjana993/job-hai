@@ -1,12 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
+// import { FaDashboard, FaSignOutAlt } from 'react-icons/fa'; // Importing icons
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if token exists in localStorage
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, []); // Empty dependency array means this runs once on mount
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleLogout = () => {
+    // Logic to handle logout
+    localStorage.removeItem('token');
+    setIsAuthenticated(false);
+    window.location.href = '/login'; // Redirect to login page
   };
 
   return (
@@ -18,18 +37,36 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex items-center space-x-4">
-          <Link to={"/Login"}>
-            <button className="hidden md:inline text-[#1F8268] border border-[#1F8268] px-6 lg:px-8 py-1 lg:py-3 rounded-md hover:bg-[#1F8268] hover:text-white">
-              Login
-            </button>
-          </Link>
-          <Link to={"/register"}>
-            <button className="hidden md:inline text-white bg-[#1F8268] px-6 lg:px-8 py-1 lg:py-3  rounded-md hover:bg-[#09654d] ">
-              Register
-            </button>
-          </Link>
-          <a href="#" className="hidden md:inline text-[#1F8268] font-bold hover:text-purple-500">Employers Login</a>
-          <button className="md:hidden text-[#1F8268] focus:outline-none" onClick={toggleMenu} > ☰ </button>
+          {!isAuthenticated ? (
+            <>
+              <Link to={"/login"}>
+                <button className="hidden md:inline text-[#1F8268] border border-[#1F8268] px-6 lg:px-8 py-1 lg:py-3 rounded-md hover:bg-[#1F8268] hover:text-white">
+                  Login
+                </button>
+              </Link>
+              <Link to={"/register"}>
+                <button className="hidden md:inline text-white bg-[#1F8268] px-6 lg:px-8 py-1 lg:py-3 rounded-md hover:bg-[#09654d]">
+                  Register
+                </button>
+              </Link>
+              <a href="#" className="hidden md:inline text-[#1F8268] font-bold hover:text-purple-500">Employers Login</a>
+            </>
+          ) : (
+            <>
+              <Link to={"/jobseeker-profile"}>
+                <button className="hidden md:inline text-[#1F8268] border border-[#1F8268] px-6 lg:px-8 py-1 lg:py-3 rounded-md hover:bg-[#1F8268] hover:text-white">
+                  Dashboard
+                </button>
+              </Link>
+              <button
+                className="hidden md:inline text-[#1F8268] border border-[#1F8268] px-6 lg:px-8 py-1 lg:py-3 rounded-md hover:bg-[#1F8268] hover:text-white"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            </>
+          )}
+          <button className="md:hidden text-[#1F8268] focus:outline-none" onClick={toggleMenu}> ☰ </button>
         </div>
       </div>
       {menuOpen && (
@@ -42,14 +79,32 @@ const Navbar = () => {
             <a href="#" className="text-gray-700 hover:text-purple-500">Career Advice</a>
             <a href="#" className="text-gray-700 hover:text-purple-500">Certifications</a>
             <span className="text-green-500">New</span>
-            <button className="text-purple-500 border border-purple-500 px-4 py-2 rounded-md hover:bg-purple-500 hover:text-white">
-              <Link to={"/login"}>Login</Link>
-
-            </button>
-            <Link to={"/register"}>  <button className="text-white bg-orange-500 px-4 py-2 rounded-md hover:bg-orange-600">
-              Register
-            </button>
-            </Link>
+            {!isAuthenticated ? (
+              <>
+                <button className="text-purple-500 border border-purple-500 px-4 py-2 rounded-md hover:bg-purple-500 hover:text-white">
+                  <Link to={"/login"}>Login</Link>
+                </button>
+                <Link to={"/register"}>
+                  <button className="text-white bg-orange-500 px-4 py-2 rounded-md hover:bg-orange-600">
+                    Register
+                  </button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to={"/dashboard"}>
+                  <button className="text-[#1F8268] border border-[#1F8268] px-4 py-2 rounded-md hover:bg-[#1F8268] hover:text-white">
+                    Dashboard
+                  </button>
+                </Link>
+                <button
+                  className="text-[#1F8268] border border-[#1F8268] px-4 py-2 rounded-md hover:bg-[#1F8268] hover:text-white"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </>
+            )}
             <a href="#" className="text-gray-700 hover:text-purple-500">Employers Login</a>
           </nav>
         </div>

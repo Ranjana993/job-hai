@@ -4,11 +4,9 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-// @route    POST /api/auth/register
-// @desc     Register a new user
-// @access   Public
 exports.registerUser = async (req, res) => {
   const { name, email, password, role } = req.body;
+  console.log("req ", req.body);
 
   try {
     // Check if the user already exists
@@ -18,12 +16,7 @@ exports.registerUser = async (req, res) => {
     }
 
     // Create new user
-    user = new User({
-      name,
-      email,
-      password,
-      role,
-    });
+    user = new User({ name, email, password, role });
 
     // Save user to the database
     await user.save();
@@ -51,9 +44,6 @@ exports.registerUser = async (req, res) => {
   }
 };
 
-// @route    POST /api/auth/login
-// @desc     Authenticate user & get token
-// @access   Public
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
 

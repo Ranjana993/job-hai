@@ -6,18 +6,14 @@ const Register = () => {
   const [role, setRole] = useState('jobseeker');
   const navigate = useNavigate();
 
-  const [userData, setUserData] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+  const [userData, setUserData] = useState({ name: "", email: "", password: "", });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/auth/register', { ...userData, role });
-      localStorage.setItem('token', res.data.token);
-      navigate('/dashboard'); // Redirect to dashboard after successful registration
+      const res = await axios.post('http://localhost:5000/api/auth/register', { ...userData, role });
+      localStorage.setItem('user-token', res.data.token);
+      navigate('/MultiStepForm');
     } catch (err) {
       console.error(err);
     }

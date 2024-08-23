@@ -1,4 +1,4 @@
-import React, { Profiler } from 'react';
+import React from 'react';
 import "./App.css"
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -9,6 +9,7 @@ import JobForm from './pages/JobForm';
 import Footer from './components/Footer';
 import JobSeekerProfile from './components/Profile/jobSeekerProfile/JobSeekerProfile';
 import EmployerProfile from './components/Profile/EmployerProfile/EmployerProfile';
+import MultiStepForm from './components/Profile/jobSeekerProfile/MultiStepForm';
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/jobform" element={<JobForm />} />
           <Route path="/employer-profile" element={<EmployerProfile />}/>
           <Route path="/jobseeker-profile" element={<JobSeekerProfile />} />
+          <Route path='/MultiStepForm' element={<MultiStepForm />}/>
         </Routes>
       </div>
       <Footer />
