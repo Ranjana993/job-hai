@@ -6,7 +6,6 @@ const bcrypt = require('bcryptjs');
 
 exports.registerUser = async (req, res) => {
   const { name, email, password, role } = req.body;
-  console.log("req ", req.body);
 
   try {
     // Check if the user already exists
@@ -15,10 +14,8 @@ exports.registerUser = async (req, res) => {
       return res.status(400).json({ msg: 'User already exists' });
     }
 
-    // Create new user
+    // Create a new user
     user = new User({ name, email, password, role });
-
-    // Save user to the database
     await user.save();
 
     // Create a JWT token
@@ -35,7 +32,16 @@ exports.registerUser = async (req, res) => {
       { expiresIn: '1h' },
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        // Send user data except password along with the token
+        res.json({
+          token,
+          user: {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            role: user.role
+          }
+        });
       }
     );
   } catch (err) {
@@ -74,7 +80,16 @@ exports.loginUser = async (req, res) => {
       { expiresIn: '1h' },
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        // Send user data except password along with the token
+        res.json({
+          token,
+          user: {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            role: user.role
+          }
+        });
       }
     );
   } catch (err) {

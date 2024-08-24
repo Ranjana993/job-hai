@@ -5,16 +5,12 @@ const authRouter = require("./routes/authRoute")
 const jobRouter = require("./routes/jobRoute")
 const cors = require("cors");
 const userRouter = require('./routes/userProfileData');
-
+const employerProfile = require('./routes/employerProfile')
 
 dotenv.config();
 const app = express();
 app.use(cors())
-
-// Connect Database
 connectDB();
-
-// Init Middleware
 app.use(express.json());
 
 
@@ -27,6 +23,7 @@ app.get("/", (req, res) => {
 app.use('/api/auth', authRouter);
 app.use('/api/jobs', jobRouter);
 app.use('/api/user/profile' , userRouter)
+app.use('/api/employer/profile', employerProfile);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port http://localhost:${PORT}`));

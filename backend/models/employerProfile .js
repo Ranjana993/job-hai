@@ -1,30 +1,26 @@
+// models/EmployerProfile.js
 const mongoose = require('mongoose');
 
-const JobSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true
+const EmployerProfileSchema = new mongoose.Schema({
+  companyName: { type: String, required: true },
+  website: { type: String },
+  location: { type: String },
+  industry: { type: String },
+  description: { type: String },
+  founded: { type: Date },
+  contactInfo: {
+    email: { type: String },
+    phone: { type: String },
+    address: { type: String },
   },
-  description: {
-    type: String,
-    required: true
-  },
-  location: {
-    type: String,
-    required: true
-  },
-  salary: {
-    type: String,
-    required: true
-  },
-  postedBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'EmployerProfile'
-  },
-  date: {
-    type: Date,
-    default: Date.now
-  }
+  jobPostings: [
+    {
+      title: { type: String },
+      description: { type: String },
+      location: { type: String },
+      salary: { type: String },
+    },
+  ],
 });
 
-module.exports = mongoose.model('Job', JobSchema);
+module.exports = mongoose.model('EmployerProfile', EmployerProfileSchema);

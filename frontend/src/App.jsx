@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import JobSeekerProfile from './components/Profile/jobSeekerProfile/JobSeekerProfile';
 import EmployerProfile from './components/Profile/EmployerProfile/EmployerProfile';
 import MultiStepForm from './components/Profile/jobSeekerProfile/MultiStepForm';
+import EmployerDashBorad from './components/Profile/EmployerProfile/EmployerDashboard';
 
 
 const App = () => {
@@ -22,9 +23,10 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/jobform" element={<JobForm />} />
-          <Route path="/employer-profile" element={<EmployerProfile />}/>
+          <Route path="/employer-profile" element={<EmployerProfile />} />
+          <Route path="/employer-dashboard" element={<EmployerDashBorad />} />
           <Route path="/jobseeker-profile" element={<JobSeekerProfile />} />
-          <Route path='/MultiStepForm' element={<MultiStepForm />}/>
+          <Route path='/MultiStepForm' element={<MultiStepForm />} />
         </Routes>
       </div>
       <Footer />

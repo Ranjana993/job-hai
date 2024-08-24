@@ -12,8 +12,15 @@ const Register = () => {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:5000/api/auth/register', { ...userData, role });
+      console.log("res", res);
+      if (res.data.user.role === "jobseeker") {
+        // console.log("jobseeker");
+        navigate('/MultiStepForm');
+      } else {
+        navigate("/employer-profile");
+      }
       localStorage.setItem('user-token', res.data.token);
-      navigate('/MultiStepForm');
+      // navigate('/MultiStepForm');
     } catch (err) {
       console.error(err);
     }
